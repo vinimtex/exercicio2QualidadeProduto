@@ -30,4 +30,10 @@ public class WriterTest {
 		assertTrue(file.exists());
 	}
 
+	@Test
+	public void powerTest() {
+		Writer writer = new Writer();
+		List<String> test = writer.mountNumbers();
+		assertEquals("3:9:27", test[2]);
+	}
 }
