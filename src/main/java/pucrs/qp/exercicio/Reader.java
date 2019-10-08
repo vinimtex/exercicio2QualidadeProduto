@@ -6,6 +6,10 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 public class Reader {
+	
+//	public int sumStringLine(String test) {
+//		
+//	}
 
 	public int sumAllFileNumbers() {
 		try (Stream<String> stream = Files.lines(Paths.get("numbers.txt"))) {
