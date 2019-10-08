@@ -1,5 +1,8 @@
 package pucrs.qp.exercicio;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +18,17 @@ public class Writer {
 			strings.add(string.toString());
 		}
 		return strings;
+	}
+
+	public void writeListStringInFile(List<String> content) {
+		try (FileWriter writer = new FileWriter("numbers.txt"); BufferedWriter bw = new BufferedWriter(writer)) {
+			for(String line : content) {				
+				bw.write(line);
+				bw.newLine();
+			}
+		} catch (IOException e) {
+			System.err.format("IOException: %s%n", e);
+		}
 	}
 
 }
